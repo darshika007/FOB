@@ -1,8 +1,8 @@
 <?php
 $user="root";
-$pass="123456";
+$pass="";
 $host="localhost";
-$dbname="face";
+$dbname="faceofblr";
 
 $con=mysqli_connect($host,$user,$pass,$dbname);
 if(!$con)
