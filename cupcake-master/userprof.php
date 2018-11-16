@@ -1,14 +1,12 @@
 <?php
 include("include.php");
-$emailid=$_GET['emailid'];
-$sql = "SELECT * from regis where id=$emailid";
-$res=mysqli_query($con,$sql);
-$row=mysqli_fetch_array($res);
-$_SESSION['fname']=$row['fname'];
-$fname = $_SESSION['fname'];
+session_start();
+$email = $_SESSION['email'];
+$fnames = $_SESSION['fname'];
+$res= mysqli_query($con,"SELECT * FROM regis WHERE email='$email'");
+$row= mysqli_fetch_assoc($res);
 //url is not visible
 {
-    session_start();
     if(isset($_SESSION['logged in'])!= TRUE)
 
     {
@@ -17,7 +15,41 @@ $fname = $_SESSION['fname'];
     }
   }
   // end URL is not vissible
-?>
+
+
+function GetImageExtension($imagetype)
+ {
+   if(empty($imagetype)) return false;
+   switch($imagetype)
+   {
+       case 'image/bmp': return '.bmp';
+       case 'image/gif': return '.gif';
+       case 'image/jpeg': return '.jpg';
+       case 'image/png': return '.png';
+       default: return false;
+   }
+ }
+ if(isset($_POST['submit']))
+ {
+   $target = "../Apple-master/img/users/".basename($_FILES["file1"]["name"]);
+   $file1=$_FILES['file1']['name'];
+   $error = $_FILES['file1']['error'];
+   $imgtype=$_FILES['file1']['type'];
+   $ext= GetImageExtension($imgtype);
+     $id = $_POST['id'];
+     $sql = "UPDATE regis SET file1='$file1' where email='$id'";
+     $res=mysqli_query($con,$sql);
+     if($res)
+     {
+       if (move_uploaded_file($_FILES['file1']['tmp_name'],$target)) {
+          $msg = "Image was uploaded successfully";
+         echo "<script type='text/javascript'>alert('$msg');window.location.href='userprof.php?id=".$id."';</script>";
+       }
+     }
+     }
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 
@@ -185,7 +217,7 @@ $fname = $_SESSION['fname'];
                         <a href="index.php#contact">Contact Us</a>
                     </li>
                     <li>
-                      Hi <?php echo $fname;?>!
+                      <a href="#"><b>HI <?php echo $row['fname'];?>!</b></a>
                     </li>
                     <li>
                         <a href="logout.php">Logout</a>
@@ -218,7 +250,7 @@ $fname = $_SESSION['fname'];
             <div class="col-md-4">
                     <div class="panel panel-default" style="margin-top: 5%; margin-left: 8%; height: 250px; width: 180px;">
                     <?php
-                $query=mysqli_query($con,"SELECT * FROM regis WHERE email='".$emailid."'");
+                $query=mysqli_query($con,"SELECT * FROM regis WHERE email='".$_SESSION['email']."'");
                 while ($row = mysqli_fetch_array($query)) {
 
                   ?>
@@ -235,7 +267,7 @@ $fname = $_SESSION['fname'];
             <fieldset>
                 <legend>User Information</legend>
                 <?php
-                $query=mysqli_query($con,"SELECT * FROM regis WHERE email='".$emailid."'");
+                $query=mysqli_query($con,"SELECT * FROM regis WHERE email='".$_SESSION['email']."'");
                 while ($row = mysqli_fetch_array($query)) {
                   ?>
                 <h4>First Name: <span><?php echo $row['fname']; ?></span></h4>
@@ -252,7 +284,7 @@ $fname = $_SESSION['fname'];
                             <div class="panel-body">
                             <i class="fa fa-thumbs-o-up fa-5x" aria-hidden="true" style="margin-left: 30%; margin-bottom: 10%; margin-top: 20%;"></i>
                             <?php
-                            $query="SELECT count(email) as cnt FROM vote WHERE email='".$emailid."'";
+                            $query="SELECT count(email) as cnt FROM vote WHERE email='".$_SESSION['email']."'";
                             $res = mysqli_query($con,$query);
                             $row=mysqli_fetch_assoc($res);?>
                               <h2><?php echo $row['cnt']; ?>Votes</h2>
@@ -399,13 +431,12 @@ $fname = $_SESSION['fname'];
 
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form method="POST" action="userprof.php" enctype="multipart/form-data">
                                     <div class="form-group">
-
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                            <input type="hidden" name="id" value="<?php echo $_SESSION['email']; ?>">                                            <input type="file" name="file1" class="form-control-file" id="exampleFormControlFile1">
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary" style="color: #fff; margin-top: 10px;">Update
+                                    <button type="submit" name="submit" class="btn btn-primary" style="color: #fff; margin-top: 10px;">Update
 
                                     </button>
                             </form>

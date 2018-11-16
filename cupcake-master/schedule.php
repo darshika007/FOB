@@ -33,7 +33,7 @@ include("include.php");
                 font-size: 20px;
                 left: 5px;
             }
-        }
+        
 
         @media(max-width:1024px) {
             #bp_banner .hero-text h1 {
@@ -42,7 +42,7 @@ include("include.php");
                 margin-top: -950px;
                 left: 35%;
             }
-        }
+        
 
         @media(max-width: 768px) {
             #bp_banner .hero-text h1 {
@@ -51,16 +51,16 @@ include("include.php");
                 margin-top: -100px;
                 left: 35%;
             }
-        }
+        
 
         @media(max-width: 375px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -100px;
-                left: 20%;
+                left: 28%;
             }
-        }
+        
 
         @media(max-width: 414px) {
             #bp_banner .hero-text h1 {
@@ -69,17 +69,17 @@ include("include.php");
                 margin-top: -100px;
                 left: 20%;
             }
-        }
+        
 
         @media(max-width: 320px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;
-                margin-left: -10%;
+                margin-left: -20%;
                 font-size: 50px;
             }
-        }
+        
 
         @media(max-width: 360px) {
             #bp_banner .hero-text h1 {
@@ -88,7 +88,7 @@ include("include.php");
                 margin-top: -20px;
                 left: 14%;
             }
-        }
+        
 
         @media(max-width: 411px) {
             #bp_banner .hero-text h1 {
@@ -97,8 +97,7 @@ include("include.php");
                 margin-top: -20px;
                 left: 19%;
             }
-        }
-
+        
         @media(max-width: 1366px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
@@ -106,7 +105,7 @@ include("include.php");
                 margin-top: -210px;
                 left: 40%;
             }
-        }
+        
 
         @media(max-width: 1500px) {
             #bp_banner .hero-text h1 {
@@ -116,7 +115,7 @@ include("include.php");
                 margin-left: 5%;
                 left: 40%;
             }
-        }
+        
 
     </style>
 
@@ -339,10 +338,13 @@ $res=mysqli_num_rows($query);
 
     <!--End Section: Contact Us-->
 
-
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
+       
 </body>
 
 </html>

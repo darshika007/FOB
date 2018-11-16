@@ -31,33 +31,50 @@ include("include.php");
             overflow-x: hidden;
         }
 
+
+         #bp_banner .hero-text
+         {
+            color: #fff; 
+            text-align: center; 
+            z-index: 1; 
+            font-size: 60px; 
+            margin-left: -5%; 
+         }
+        
         @media(max-width:321px) {
-            #bp_banner .hero-text {
+            #bp_banner .hero-text 
+            {
                 font-size: 20px;
                 left: 5px;
             }
         }
+        
 
         @media(max-width:1024px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
-                margin-top: -250px;
+                margin-top: -550px;
                 left: 35%;
             }
         }
+        
 
         @media(max-width: 768px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -100px;
                 left: 35%;
             }
         }
+        
 
         @media(max-width: 375px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -100px;
@@ -66,7 +83,8 @@ include("include.php");
         }
 
         @media(max-width: 414px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -100px;
@@ -75,17 +93,19 @@ include("include.php");
         }
 
         @media(max-width: 320px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
-                margin-top: -20px;
+                margin-top: -50px;
                 margin-left: -10%;
-                font-size: 50px;
+                font-size: 40px;
             }
         }
 
         @media(max-width: 360px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;
@@ -95,7 +115,8 @@ include("include.php");
         }
 
         @media(max-width: 411px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;
@@ -104,7 +125,8 @@ include("include.php");
         }
 
         @media(max-width: 1366px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;
@@ -195,7 +217,7 @@ include("include.php");
         <div class="overlay"></div>
 
         <div class="hero-text">
-            <h1 style="color: #fff; text-align: center; z-index: 1; font-size: 60px; margin-left: -10%; ">Top Contestants</h1>
+            <h1>Top Contestants</h1>
         </div>
     </section>
     <!--End Banner-->

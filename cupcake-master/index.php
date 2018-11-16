@@ -130,7 +130,7 @@ else{
                         <a href="schedule.php">Schedule</a>
                     </li>
                     <li>
-                        <a href="topcont.html">Top Contestants</a>
+                        <a href="topcont.php">Top Contestants</a>
                     </li>
                     <li>
                         <a href="cont.php">Contestants</a>
@@ -161,7 +161,7 @@ else{
 
 
     <!--Begin: Home Section-->
-    <section class="canvas-wrap">
+    <section class="canvas-wrap" id="home">
         <div class="canvas-content">
             <h1 style=" font-size: 80px; font-weight: 600;">Face Of Bengaluru-2018</h1>
         </div>
@@ -339,7 +339,7 @@ else{
 
 
     <!--Begin Section: Contact Us-->
-    <section id="sponsors" style="background: #1a1724;">
+    <section id="contact" style="background: #1a1724;">
         <div class="container">
             <div class="row">
                     <div class="col-md-10 col-md-push-2" >
