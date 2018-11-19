@@ -31,14 +31,14 @@ include("include.php");
 
        #bp_banner .hero-text
        {
-            color: #fff !important; 
-            text-align: center; 
-            z-index: 1; 
+            color: #fff !important;
+            text-align: center;
+            z-index: 1;
             font-size: 50px;
         }
 
       @media(max-width: 414px) {
-            #bp_banner .hero-text h1 
+            #bp_banner .hero-text h1
             {
                 bottom: 5%;
                 margin-top: -5px;
@@ -48,7 +48,7 @@ include("include.php");
         }
 
          @media(max-width: 320px) {
-            #bp_banner .hero-text h1 
+            #bp_banner .hero-text h1
             {
                 bottom: 5%;
                 margin-top: -5px;
@@ -59,7 +59,7 @@ include("include.php");
 
 
         @media(min-width: 768px) {
-            #bp_banner .hero-text h1 
+            #bp_banner .hero-text h1
             {
                 bottom: 5%;
                 margin-top: -30px;
@@ -83,7 +83,7 @@ include("include.php");
         }
 
         @media(min-width: 1024px) {
-            #bp_banner .hero-text h1 
+            #bp_banner .hero-text h1
             {
                 bottom: 5%;
                 margin-top: -140px;
@@ -98,14 +98,14 @@ include("include.php");
 
             #pages
             {
-                padding-left: 0%; 
+                padding-left: 0%;
 
             }
         }
 
 
         @media(min-width: 1025px) {
-            #bp_banner .hero-text h1 
+            #bp_banner .hero-text h1
             {
                 bottom: 5%;
                 margin-top: -40px;
@@ -245,69 +245,37 @@ include("include.php");
     <!--End Banner-->
 
     <div id="contpanels" class="row" style="margin-top: 7%; margin-left: 2%;">
-        <div class="container">
-        <?php
-                    $sql="SELECT * FROM regis WHERE status='approve' or status='pending'or status='selected'";
-                    $res=mysqli_query($con,$sql);
-                    while($row=mysqli_fetch_assoc($res)){
-                        ?>
-            <div class="col-md-4">
-               <div class="panel panel-default" style="margin-top: 5%; margin-left: 8%; height: 340px; width: 235px;">
-                    <a href="contind.php?emailid=<?php echo $row['id']; ?>">  
-                    <div class="panel-body">
-                        <img src="<?php echo '../Apple-master/img/users/'. $row['file1']; ?>" height="235px;" width="200px;">
-                    </a>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                        <a href="topcontind.php?emailid=<?php echo $row['id']; ?>">  <?php echo '<h5>'.$row['fname'].''.$row['lname'].'</h5>'; ?></a>
-
-                        </div>
-                        <div class="col-md-8" style="margin-top: 5%; left: 25%;">
-                          <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                              <a href="vote.php?emailid=<?php echo $row['id']; ?>"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#voteModal">Vote</button></a>
-                              <?php
-                               $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'";
-                               $result=mysqli_query($con,$sql);
-                                  $values=mysqli_fetch_array($result);
-                                  $num_rows=$values['total'];
-                              ?>
-                              <button type="button" class="btn btn-default btn-sm"><?php echo $num_rows;?></button>
-                          </div>
-                        </div>
-                    </div>
-                    </div>
+       <div class="container">
+<?php
+                     $sql="SELECT * FROM regis WHERE status='approve' or status='pending'or status='selected'";
+                     $res=mysqli_query($con,$sql);
+                     while($row=mysqli_fetch_assoc($res)){?>
+                       <div class="col-md-4">
+           <div class="flip-card">
+               <div class="flip-card-inner">
+                   <div class="flip-card-front">
+                     <img src="<?php echo '../Apple-master/img/users/'. $row['file1']; ?>" alt="Avatar" style="width:250px; height:300px;">
+                   </div>
+                   <div class="flip-card-back">
+                       <a style="color: #fff;" href="contind.php?emailid=<?php echo $row['id']; ?>"><h1><?php echo '<h5>'.$row['fname'].''.$row['lname'].'</h5>'; ?></h1></a>
+                       <p><?php echo $row['drop1']; ?></p>
+                       <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                             <a href="vote.php?emailid=<?php echo $row['id']; ?>"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#voteModal">Vote</button></a>
+                             <?php
+                              $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'";
+                              $result=mysqli_query($con,$sql);
+                                 $values=mysqli_fetch_array($result);
+                                 $num_rows=$values['total'];
+                             ?>
+                             <button type="button" class="btn btn-default btn-sm"><?php echo $num_rows;?></button>
+                         </div>
+                   </div>
                 </div>
-            </div>
-                    <?php } ?>
-        </div>
-    </div>
-
-     <div id="contpanels" class="row" style="margin-top: 7%; margin-left: 2%;">
-        <div class="container">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="images/cupcake.jpg" alt="Avatar" style="width:250px; height:300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <a style="color: #fff;" href="contind.php"><h1>John Doe</h1></a>
-                        <p>Christ University</p> 
-                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                              <a href="vote.php?emailid=<?php echo $row['id']; ?>"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#voteModal">Vote</button></a>
-                              <?php
-                               $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'";
-                               $result=mysqli_query($con,$sql);
-                                  $values=mysqli_fetch_array($result);
-                                  $num_rows=$values['total'];
-                              ?>
-                              <button type="button" class="btn btn-default btn-sm"><?php echo $num_rows;?></button>
-                          </div>
-                    </div>
-                 </div>
-            </div>
-        </div>
-    </div>
+           </div>
+         </div>
+         <?php } ?>
+       </div>
+   </div>
 
 
     <div class="row" id="pages" style="margin-top: 5%; margin-bottom: 10%; margin-left: 10%;">

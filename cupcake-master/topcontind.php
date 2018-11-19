@@ -204,26 +204,26 @@ $emailid=$_GET['emailid'];
                     <?php
                 $query=mysqli_query($con,"SELECT * FROM regis WHERE id='".$emailid."'");
                 while ($row = mysqli_fetch_array($query)) {
-               
-                  ?> 
+
+                  ?>
                     <div class="panel-body">
-                              <img src="<?php echo 'Pictures/'. $row['file1']; ?>" height="170px;" width="140px;" >
+                              <img src="<?php echo '../Apple-master/img/users/'. $row['file1']; ?>" height="170px;" width="140px;" >
                             </div>
-                            
+
                       <center><a href="vote.php?emailid=<?php echo $row['id']; ?>"><h4>Vote</h4></a></center>
                     </div>
             </div>
 
             <div class="col-md-4" id="userinfo" style="margin-top: 3%;">
-            
+
             <fieldset>
-                <legend>User Information</legend> 
-                <h4>First Name: <span><?php echo $row['fname']; ?></span></h4> 
-                <h4>Last Name: <span><?php echo $row['lname']; ?></span></h4> 
+                <legend>User Information</legend>
+                <h4>First Name: <span><?php echo $row['fname']; ?></span></h4>
+                <h4>Last Name: <span><?php echo $row['lname']; ?></span></h4>
                 <h4>Age: <span><?php echo $row['age']; ?></span></h4>
                 <h4>Height: <span><?php echo $row['height']; ?></span></h4>
                 <h4>Weight: <span><?php echo $row['weight']; ?></span></h4>
-               
+
             </fieldset>
             </div>
 
@@ -231,7 +231,7 @@ $emailid=$_GET['emailid'];
                     <div class="panel panel-default" style="margin-top: 5%; margin-left: 8%; height: 250px; width: 180px; background: rgb(47, 25, 70); color: #fff;">
                             <div class="panel-body">
                             <?php
- $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'"; 
+ $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'";
  $result=mysqli_query($con,$sql);
     $values=mysqli_fetch_array($result);
     $num_rows=$values['total'];
@@ -272,13 +272,13 @@ $emailid=$_GET['emailid'];
                     <div class="col-md-10 col-md-push-2">
                         <h1 style="font-family: 'Germania One', cursive; color: #fff;  font-size: 50px;margin-bottom: 5%; margin-top: 5%; margin-left: 30%;">Contact Us</h1>
                     </div>
-    
+
                     <div class="col-md-4" style="margin-top: 5%; ">
                         <center>
                             <img src="images/LogoMakr_5es2Bi.png" height="140px;" width="170px;">
                         </center>
                     </div>
-    
+
                     <div class="col-md-4" style="font-size: 16px; color: #fff;">
                         <center>
                             <h3>
@@ -310,10 +310,10 @@ $emailid=$_GET['emailid'];
                                     <a href="topcont.html">Top Contestants</a>
                                 </li>
                             </ul>
-    
+
                         </center>
                     </div>
-    
+
                     <div class="col-md-4" style="font-size: 16px; color: #fff;">
                         <center>
                             <h3>
@@ -345,12 +345,12 @@ $emailid=$_GET['emailid'];
                                         <i class="fa fa-linkedin"></i>
                                     </a>
                                 </li>
-    
+
                             </ul>
                         </center>
                     </div>
-    
-    
+
+
                 </div>
             </div>
         </section>
@@ -365,10 +365,10 @@ $emailid=$_GET['emailid'];
                 <!-- /footer copyright -->
             </div>
         </div>
-    
-    
+
+
         <!--End Section: Contact Us-->
-    
+
         <!--Modal-->
 
          <!--Login Modal-->
@@ -380,7 +380,7 @@ $emailid=$_GET['emailid'];
                             <span aria-hidden="true">&times;</span>
                         </button>
                 <h4 class="modal-title" style="color: #000;">Login</h4>
-                
+
             </div>
             <div class="modal-body">
                 <form>
@@ -395,7 +395,7 @@ $emailid=$_GET['emailid'];
                     <a href="userprof.html" type="submit" class="btn btn-success">Login</a>
                 </form>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -411,7 +411,7 @@ $emailid=$_GET['emailid'];
                                 <span aria-hidden="true">&times;</span>
                             </button>
                     <h4 class="modal-title" style="color: #000;">Vote</h4>
-                    
+
                 </div>
                 <div class="modal-body">
                     <form>
@@ -430,18 +430,18 @@ $emailid=$_GET['emailid'];
                         <button class="btn-primary">Vote</button>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </div>
 
 
-    
+
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
     </body>
-    
+
     </html>

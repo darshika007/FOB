@@ -180,7 +180,7 @@ while ($row = mysqli_fetch_array($query)) {
 
     ?>
                     <div class="panel-body">
-                              <img src="<?php echo 'Pictures/' . $row['file1']; ?>" height="170px;" width="140px;" >
+                              <img src="<?php echo '../Apple-master/img/users/' . $row['file1']; ?>" height="170px;" width="140px;" >
 
                 </div>
                             <center><a href="vote.php?emailid=<?php echo $row['id']; ?>"><h4>Vote</h4></a></center>

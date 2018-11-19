@@ -26,73 +26,138 @@ include("include.php");
 
 
     <style>
-        html,
-        body {
-            overflow-x: hidden;
-        }
+         html, body{
+             overflow-x: hidden;
+         }
 
+        #bp_banner .hero-text
+        {
+             color: #fff !important;
+             text-align: center;
+             z-index: 1;
+             font-size: 50px;
+         }
 
-         #bp_banner .hero-text h1
-         {
-            color: #fff; 
-            text-align: center; 
-            z-index: 1; 
-            font-size: 50px;
+       @media(max-width: 414px) {
+             #bp_banner .hero-text h1
+             {
+                 bottom: 5%;
+                 margin-top: -5px;
+                 margin-left: -20%;
+                 font-size: 48px;
+             }
+         }
+
+          @media(max-width: 320px) {
+             #bp_banner .hero-text h1
+             {
+                 bottom: 5%;
+                 margin-top: -5px;
+                 margin-left: -28%;
+                 font-size: 48px;
+             }
          }
 
 
-         @media(max-width: 411px) {
-            #bp_banner .hero-text h1 
-            {
-                bottom: 5%;
-                padding-top: -30%;
-                margin-top: -20px;
-                left: 10%;
-            }
-        }
+         @media(min-width: 768px) {
+             #bp_banner .hero-text h1
+             {
+                 bottom: 5%;
+                 margin-top: -30px;
+                 margin-left: -7%;
+                 /* font-size: 60px; */
+             }
 
-        @media(max-width: 414px) {
-            #bp_banner .hero-text h1 
-            {
-                
-                padding-top: -30%;
-                margin-top: -30px;
-                left: 10%;
-            }
-        }
+             #contpanels
+             {
+                 padding-left: 20%;
+             }
 
-        @media(min-width: 768px) {
-            #bp_banner .hero-text h1 
-            {
-                
-                margin-top: -50px;
-                left: 30%;
-            }
-        }
+             #pages
+             {
+                 padding-left: 20%;
+             }
 
 
-         @media(min-width:1024px) {
-            #bp_banner .hero-text h1 
-            {
-                bottom: 5%;
-                padding-top: -30%;
-                margin-top: -200px;
-                left: 35%;
-            }
-        }
 
 
-@media(min-width:1025px) {
-            #bp_banner .hero-text h1 
-            {
-              
-                
-                margin-top: 50px;
-                left: 35%;
-            }
-        }
-        
-    </style>
+         }
+
+         @media(min-width: 1024px) {
+             #bp_banner .hero-text h1
+             {
+                 bottom: 5%;
+                 margin-top: -140px;
+                 margin-left: -4%;
+                 /* font-size: 40px; */
+             }
+
+             #contpanels
+             {
+                 padding-left: 0%;
+             }
+
+             #pages
+             {
+                 padding-left: 0%;
+
+             }
+         }
+
+
+         @media(min-width: 1025px) {
+             #bp_banner .hero-text h1
+             {
+                 bottom: 5%;
+                 margin-top: -40px;
+                 margin-left: -4%;
+                 /* font-size: 40px; */
+             }
+         }
+
+
+ .flip-card {
+   background-color: transparent;
+   width: 250px;
+   height: 300px;
+   perspective: 1000px;
+ }
+
+ .flip-card-inner {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   transition: transform 0.6s;
+   transform-style: preserve-3d;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ }
+
+ .flip-card:hover .flip-card-inner {
+   transform: rotateY(180deg);
+ }
+
+ .flip-card-front, .flip-card-back {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+ }
+
+ .flip-card-front {
+   background-color: #bbb;
+   color: black;
+   z-index: 2;
+ }
+
+ .flip-card-back {
+   background-color: rgb(47, 25, 70);
+   color: white;
+   transform: rotateY(180deg);
+   z-index: 1;
+   padding-top:30%;
+ }
+ </style>
 
 </head>
 
@@ -181,47 +246,38 @@ include("include.php");
     </section>
     <!--End Banner-->
 
-    <div class="row" style="margin-top: 7%; margin-left: 2%;">
-        <div class="container">
-          <?php
-                      $sql="SELECT * FROM regis WHERE status='selected'";
-                      $res=mysqli_query($con,$sql);
-                      while($row=mysqli_fetch_assoc($res)){
-                          ?>
-            <div class="col-md-4">
-               <div class="panel panel-default" style="margin-top: 15%; margin-left: 8%; height: 320px; width: 235px;">
-                      <a href="topcontind.php?emailid=<?php echo $row['id']; ?>">  
-                      <div class="panel-body">
-                      <img src="<?php echo '../Apple-master/img/users/'. $row['file1']; ?>" height="235px;" width="200px;">
-                    </a>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h5><b><?php echo '<h5>'.$row['fname'].''.$row['lname'].'</h5>'; ?></b>
-                                <br><?php echo $row['drop1']; ?></h5>
-
-                        </div>
-                        <div class="col-md-8" style="margin-top: 5%; left: 25%;">
-                            <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                                <a href="vote.php?emailid=<?php echo $row['id']; ?>"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#voteModal">Vote</button></a>
-                                <?php
-                                 $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'";
-                                 $result=mysqli_query($con,$sql);
-                                    $values=mysqli_fetch_array($result);
-                                    $num_rows=$values['total'];
-                                ?>
-                                <button type="button" class="btn btn-default btn-sm"><?php echo $num_rows;?></button>
-                            </div>
-                        </div>
-                    </div>
-
+    <div id="contpanels" class="row" style="margin-top: 7%; margin-left: 2%;">
+       <div class="container">
+  <?php
+                     $sql="SELECT * FROM regis WHERE status='selected'";
+                     $res=mysqli_query($con,$sql);
+                     while($row=mysqli_fetch_assoc($res)){?>
+                       <div class="col-md-4">
+           <div class="flip-card">
+               <div class="flip-card-inner">
+                   <div class="flip-card-front">
+                     <img src="<?php echo '../Apple-master/img/users/'. $row['file1']; ?>" alt="Avatar" style="width:250px; height:300px;">
+                   </div>
+                   <div class="flip-card-back">
+                       <a style="color: #fff;" href="topcontind.php?emailid=<?php echo $row['id']; ?>"><h1><?php echo '<h5>'.$row['fname'].''.$row['lname'].'</h5>'; ?></h1></a>
+                       <p><?php echo $row['drop1']; ?></p>
+                       <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                             <a href="vote.php?emailid=<?php echo $row['id']; ?>"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#voteModal">Vote</button></a>
+                             <?php
+                              $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'";
+                              $result=mysqli_query($con,$sql);
+                                 $values=mysqli_fetch_array($result);
+                                 $num_rows=$values['total'];
+                             ?>
+                             <button type="button" class="btn btn-default btn-sm"><?php echo $num_rows;?></button>
+                         </div>
+                   </div>
                 </div>
-                </div>
-            </div><?php }?>
-
-        </div>
-    </div>
-
+           </div>
+         </div>
+         <?php } ?>
+       </div>
+   </div>
     <div class="row" style="margin-top: 5%; margin-bottom: 10%; margin-left:10%;">
         <div class="container">
             <div class="col-md-4  col-md-push-4">
