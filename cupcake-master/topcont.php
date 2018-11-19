@@ -32,107 +32,66 @@ include("include.php");
         }
 
 
-         #bp_banner .hero-text
+         #bp_banner .hero-text h1
          {
             color: #fff; 
             text-align: center; 
             z-index: 1; 
-            font-size: 60px; 
-            margin-left: -5%; 
+            font-size: 50px;
          }
-        
-        @media(max-width:321px) {
-            #bp_banner .hero-text 
-            {
-                font-size: 20px;
-                left: 5px;
-            }
-        }
-        
 
-        @media(max-width:1024px) {
+
+         @media(max-width: 411px) {
             #bp_banner .hero-text h1 
             {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -550px;
-                left: 35%;
-            }
-        }
-        
-
-        @media(max-width: 768px) {
-            #bp_banner .hero-text h1 
-            {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -100px;
-                left: 35%;
-            }
-        }
-        
-
-        @media(max-width: 375px) {
-            #bp_banner .hero-text h1 
-            {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -100px;
-                left: 20%;
+                padding-top: -30%;
+                margin-top: -20px;
+                left: 10%;
             }
         }
 
         @media(max-width: 414px) {
             #bp_banner .hero-text h1 
             {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -100px;
-                left: 20%;
+                
+                padding-top: -30%;
+                margin-top: -30px;
+                left: 10%;
             }
         }
 
-        @media(max-width: 320px) {
+        @media(min-width: 768px) {
             #bp_banner .hero-text h1 
             {
-                bottom: 5%;
-                /* padding-top: -30%; */
+                
                 margin-top: -50px;
-                margin-left: -10%;
-                font-size: 40px;
+                left: 30%;
             }
         }
 
-        @media(max-width: 360px) {
+
+         @media(min-width:1024px) {
             #bp_banner .hero-text h1 
             {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -20px;
-                padding-left: -10%;
-                margin-left: -37%;
+                padding-top: -30%;
+                margin-top: -200px;
+                left: 35%;
             }
         }
 
-        @media(max-width: 411px) {
-            #bp_banner .hero-text h1 
-            {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -20px;
-                left: 15%;
-            }
-        }
 
-        @media(max-width: 1366px) {
+@media(min-width:1025px) {
             #bp_banner .hero-text h1 
             {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -20px;
-                left: 43%;
+              
+                
+                margin-top: 50px;
+                left: 35%;
             }
         }
+        
     </style>
 
 </head>
@@ -230,10 +189,11 @@ include("include.php");
                       while($row=mysqli_fetch_assoc($res)){
                           ?>
             <div class="col-md-4">
-               <div class="panel panel-default" style="margin-top: 5%; margin-left: 8%; height: 270px; width: 235px;">
-                      <a href="topcontind.php?emailid=<?php echo $row['id']; ?>">  <div class="panel-body">
+               <div class="panel panel-default" style="margin-top: 15%; margin-left: 8%; height: 320px; width: 235px;">
+                      <a href="topcontind.php?emailid=<?php echo $row['id']; ?>">  
+                      <div class="panel-body">
                       <img src="<?php echo '../Apple-master/img/users/'. $row['file1']; ?>" height="235px;" width="200px;">
-                    </div></a>
+                    </a>
 
                     <div class="row">
                         <div class="col-md-4">
@@ -256,12 +216,13 @@ include("include.php");
                     </div>
 
                 </div>
+                </div>
             </div><?php }?>
 
         </div>
     </div>
 
-    <div class="row" style="margin-top: 5%; margin-bottom: 10%;">
+    <div class="row" style="margin-top: 5%; margin-bottom: 10%; margin-left:10%;">
         <div class="container">
             <div class="col-md-4  col-md-push-4">
                 <nav aria-label="Page navigation">

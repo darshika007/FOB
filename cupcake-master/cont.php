@@ -24,94 +24,139 @@ include("include.php");
     <script src="main.js"></script>
 
 
-    <style>
-        html,
-        body {
+   <style>
+        html, body{
             overflow-x: hidden;
         }
 
-        @media(max-width:321px) {
-            #bp_banner .hero-text {
-                font-size: 20px;
-                left: 5px;
-            }
+       #bp_banner .hero-text
+       {
+            color: #fff !important; 
+            text-align: center; 
+            z-index: 1; 
+            font-size: 50px;
         }
 
-        @media(max-width:1024px) {
-            #bp_banner .hero-text h1 {
+      @media(max-width: 414px) {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -250px;
-                left: 35%;
+                margin-top: -5px;
+                margin-left: -20%;
+                font-size: 48px;
             }
         }
 
-        @media(max-width: 768px) {
-            #bp_banner .hero-text h1 {
+         @media(max-width: 320px) {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -100px;
-                left: 35%;
+                margin-top: -5px;
+                margin-left: -28%;
+                font-size: 48px;
             }
         }
 
-        @media(max-width: 375px) {
-            #bp_banner .hero-text h1 {
+
+        @media(min-width: 768px) {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -100px;
-                left: 20%;
+                margin-top: -30px;
+                margin-left: -7%;
+                /* font-size: 60px; */
             }
+
+            #contpanels
+            {
+                padding-left: 20%;
+            }
+
+            #pages
+            {
+                padding-left: 20%;
+            }
+
+
+
+
         }
 
-        @media(max-width: 414px) {
-            #bp_banner .hero-text h1 {
+        @media(min-width: 1024px) {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -100px;
-                left: 20%;
+                margin-top: -140px;
+                margin-left: -4%;
+                /* font-size: 40px; */
+            }
+
+            #contpanels
+            {
+                padding-left: 0%;
+            }
+
+            #pages
+            {
+                padding-left: 0%; 
+
             }
         }
 
-        @media(max-width: 320px) {
-            #bp_banner .hero-text h1 {
+
+        @media(min-width: 1025px) {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -20px;
-                margin-left: -10%;
-                font-size: 50px;
+                margin-top: -40px;
+                margin-left: -4%;
+                /* font-size: 40px; */
             }
         }
 
-        @media(max-width: 360px) {
-            #bp_banner .hero-text h1 {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -20px;
-                padding-left: -10%;
-                margin-left: -37%;
-            }
-        }
 
-        @media(max-width: 411px) {
-            #bp_banner .hero-text h1 {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -20px;
-                left: 15%;
-            }
-        }
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+}
 
-        @media(max-width: 1366px) {
-            #bp_banner .hero-text h1 {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -20px;
-                left: 43%;
-            }
-        }
-    </style>
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: rgb(47, 25, 70);
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+  padding-top:30%;
+}
+</style>
 </head>
 
 <body>
@@ -194,12 +239,12 @@ include("include.php");
         <div class="overlay"></div>
 
         <div class="hero-text">
-            <h1 style="color: #fff; text-align: center; z-index: 1; font-size: 60px; ">Contestants</h1>
+            <h1>Contestants</h1>
         </div>
     </section>
     <!--End Banner-->
 
-    <div class="row" style="margin-top: 7%; margin-left: 2%;">
+    <div id="contpanels" class="row" style="margin-top: 7%; margin-left: 2%;">
         <div class="container">
         <?php
                     $sql="SELECT * FROM regis WHERE status='approve' or status='pending'or status='selected'";
@@ -207,10 +252,11 @@ include("include.php");
                     while($row=mysqli_fetch_assoc($res)){
                         ?>
             <div class="col-md-4">
-               <div class="panel panel-default" style="margin-top: 5%; margin-left: 8%; height: 270px; width: 235px;">
-                    <a href="contind.php?emailid=<?php echo $row['id']; ?>">  <div class="panel-body">
+               <div class="panel panel-default" style="margin-top: 5%; margin-left: 8%; height: 340px; width: 235px;">
+                    <a href="contind.php?emailid=<?php echo $row['id']; ?>">  
+                    <div class="panel-body">
                         <img src="<?php echo '../Apple-master/img/users/'. $row['file1']; ?>" height="235px;" width="200px;">
-                    </div></a>
+                    </a>
 
                     <div class="row">
                         <div class="col-md-4">
@@ -230,14 +276,41 @@ include("include.php");
                           </div>
                         </div>
                     </div>
-
+                    </div>
                 </div>
             </div>
                     <?php } ?>
         </div>
     </div>
 
-    <div class="row" style="margin-top: 5%; margin-bottom: 10%;">
+     <div id="contpanels" class="row" style="margin-top: 7%; margin-left: 2%;">
+        <div class="container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="images/cupcake.jpg" alt="Avatar" style="width:250px; height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <a style="color: #fff;" href="contind.php"><h1>John Doe</h1></a>
+                        <p>Christ University</p> 
+                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                              <a href="vote.php?emailid=<?php echo $row['id']; ?>"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#voteModal">Vote</button></a>
+                              <?php
+                               $sql="SELECT count(name) AS total FROM vote WHERE email='".$row['email']."'";
+                               $result=mysqli_query($con,$sql);
+                                  $values=mysqli_fetch_array($result);
+                                  $num_rows=$values['total'];
+                              ?>
+                              <button type="button" class="btn btn-default btn-sm"><?php echo $num_rows;?></button>
+                          </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="pages" style="margin-top: 5%; margin-bottom: 10%; margin-left: 10%;">
         <div class="container">
             <div class="col-md-4  col-md-push-4">
                 <nav aria-label="Page navigation">

@@ -29,14 +29,16 @@ include("include.php");
             overflow-x: hidden;
         }
         @media(max-width:321px) {
-            #bp_banner .hero-text {
+            #bp_banner .hero-text 
+            {
                 font-size: 20px;
                 left: 5px;
             }
         }
 
         @media(max-width:1024px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -250px;
@@ -45,7 +47,8 @@ include("include.php");
         }
 
         @media(max-width: 768px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -100px;
@@ -54,7 +57,8 @@ include("include.php");
         }
 
         @media(max-width: 375px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -100px;
@@ -63,7 +67,8 @@ include("include.php");
         }
 
         @media(max-width: 414px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -100px;
@@ -72,7 +77,8 @@ include("include.php");
         }
 
         @media(max-width: 320px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;
@@ -82,7 +88,8 @@ include("include.php");
         }
 
         @media(max-width: 360px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;
@@ -91,7 +98,8 @@ include("include.php");
         }
 
         @media(max-width: 411px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;
@@ -100,7 +108,8 @@ include("include.php");
         }
 
         @media(max-width: 1366px) {
-            #bp_banner .hero-text h1 {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
                 /* padding-top: -30%; */
                 margin-top: -20px;

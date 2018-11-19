@@ -50,6 +50,7 @@ else{
             overflow-x: hidden;
             font-family: arial;
             color: #fff;
+            width:100vw !important;
         }
 
         /* h1{
@@ -61,7 +62,7 @@ else{
         }
 
         #canvas {
-            width: 100%;
+            /* width: 100%; */
             /* height:700px; */
             height: 110vh;
             /* overflow: hidden; */
@@ -163,7 +164,7 @@ else{
     <!--Begin: Home Section-->
     <section class="canvas-wrap" id="home">
         <div class="canvas-content">
-            <h1 style=" font-size: 80px; font-weight: 600;">Face Of Bengaluru-2018</h1>
+            <h1 style=" font-size: 70px; font-weight: 600;">Face Of Bengaluru-2018</h1>
         </div>
         <div id="canvas" class="gradient"></div>
 
@@ -186,20 +187,12 @@ else{
     <section id="about" style="margin-top: 30%; color: #000">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-push-2">
+                <div class="col-md-8 col-md-push-3">
                     <h1 style="font-family: 'Germania One', cursive; font-size: 50px;">Do you think you have what it takes to be the Face Of Bengaluru?</h1>
 
-                    <p style="text-align: justify; font-size: 18px; margin-top: 5%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repudiandae quis id doloremque, ullam
-                        odit temporibus maiores, numquam, unde autem in quas corrupti ipsam veniam ad veritatis impedit dolores
-                        quo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eaque deleniti vero quis quisquam
-                        architecto corporis? Eligendi, molestias! Harum sunt obcaecati reiciendis distinctio ratione quisquam
-                        vel laborum commodi dolore corrupti.</p>
+                    <p style="text-align: justify; font-size: 18px; margin-top: 5%;">We're looking for young talented stars with a personaity that makes him/her stand out. If you think you have what it takes to be the Face of Bengaluru, register now!</p>
                     <br>
-                    <p style="text-align: justify; font-size: 18px; ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repudiandae quis id doloremque, ullam
-                        odit temporibus maiores, numquam, unde autem in quas corrupti ipsam veniam ad veritatis impedit dolores
-                        quo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eaque deleniti vero quis quisquam
-                        architecto corporis? Eligendi, molestias! Harum sunt obcaecati reiciendis distinctio ratione quisquam
-                        vel laborum commodi dolore corrupti.</p>
+                    <p style="text-align: justify; font-size: 18px; ">Face of Bengaluru is an initiave started by Naturals Salon. The goal is to find a deserving talented entrant with a personality that shines and makes him/her steal the limelight.</p>
 
                         <a href="reg.php"><button type="Login" class="btn" style="color: #fff; margin-top: 10px; float: right; background: #ff3300;">Register Now!
                     </button></a>
@@ -246,10 +239,13 @@ else{
                             <h3 class="content-title"><?php echo $row['cname']; ?></h3>
                         </div>
                     </div>
+                   
                 </div>
+                
                 <?php } }?>
-                <a href="gallery.php"><button type="Login" class="btn" style="color: #fff;margin-left:88%; background: #2078aa;">View More
-                  </button>  </a>
+                <a href="gallery.php"><center><button type="Login" class="btn" style="color: #fff; background: #2078aa; ">View More
+                  </button></center>  </a>
+                
             </div>
 
         </div>
@@ -275,7 +271,7 @@ else{
                   $desigURL = $row['designation'];
                   ?>
                 <div class="col-md-3">
-                    <div class="content" style="padding-left: 7%;">
+                    <div class="content" style="padding-left: 7%; margin-top:10%;">
                         <div class="content-overlay"></div>
                         <img class="content-image" src="<?php echo $imageURL; ?>" alt="Judge" class="image" height="215px;" width="130px;" >
                         <div class="content-details fadeIn-top">
@@ -340,7 +336,7 @@ else{
 
     <!--Begin Section: Contact Us-->
     <section id="contact" style="background: #1a1724;">
-        <div class="container">
+        <!-- <div class="container"> -->
             <div class="row">
                     <div class="col-md-10 col-md-push-2" >
                             <h1 style="font-family: 'Germania One', cursive; color: #fff;  font-size: 50px;margin-bottom: 5%; margin-top: 5%; margin-left: 30%;">Contact Us</h1>
@@ -384,14 +380,14 @@ else{
 
 
             </div>
-        </div>
+        <!-- </div> -->
     </section>
             <div class="row" style="background: rgb(54, 54, 54);">
                 <div class="col-md-8 col-md-push-4">
                     <!-- footer copyright -->
                     <div class="footer-copyright">
                             <p>Copyright © 2018. All Rights Reserved. Designed by <a href="http://fametechnologies.in/" target="_blank">Fame Technologies</a></p>
-                        </div>
+                    </div>
                         <!-- /footer copyright -->
                 </div>
             </div>

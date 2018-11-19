@@ -28,35 +28,82 @@ include("include.php");
         html, body{
             overflow-x: hidden;
         }
-        @media(max-width:321px) {
-            #bp_banner .hero-text {
-                font-size: 20px;
-                left: 5px;
-            }
-        
 
-        @media(max-width:1024px) {
-            #bp_banner .hero-text h1 {
+       #bp_banner .hero-text
+       {
+            color: #fff !important; 
+            text-align: center; 
+            z-index: 1; 
+            font-size: 50px;
+        }
+
+        @media(max-width: 414px) {
+            #bp_banner .hero-text h1 
+            {
                 bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -950px;
+                margin-top: -40px;
+                margin-left: -10%;
+            }
+        }
+
+        @media(max-width:320px) {
+            #bp_banner .hero-text h1
+            {
+                /* font-size: 20px; */
+                left: 17%;
+                margin-top: 10%;
+            }
+        }
+
+         @media(max-width: 768px) {
+            #bp_banner .hero-text h1 
+            {
+                
+                margin-top: -50px;
                 left: 35%;
             }
+        }
+
+
+        @media(min-width: 1024px) {
+            #bp_banner .hero-text h1 
+            {
+                /* bottom: 80%; */
+                z-index:30;
+                margin-top: -170px;
+        
+            }
+        }
+
+
+        @media(min-width: 1025px) {
+            #bp_banner .hero-text h1 
+            {
+                /* bottom: 80%; */
+                z-index:30;
+                margin-top: 20px;
+        
+            }
+        }
+
+
+
+
+         
         
 
-        @media(max-width: 768px) {
-            #bp_banner .hero-text h1 {
-                bottom: 5%;
-                /* padding-top: -30%; */
-                margin-top: -100px;
-                left: 35%;
-            }
+        /* 
+        
+
+        
+
+       
         
 
         @media(max-width: 375px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
-                /* padding-top: -30%; */
+                
                 margin-top: -100px;
                 left: 28%;
             }
@@ -65,7 +112,7 @@ include("include.php");
         @media(max-width: 414px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
-                /* padding-top: -30%; */
+                
                 margin-top: -100px;
                 left: 20%;
             }
@@ -74,7 +121,7 @@ include("include.php");
         @media(max-width: 320px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
-                /* padding-top: -30%; */
+               
                 margin-top: -20px;
                 margin-left: -20%;
                 font-size: 50px;
@@ -84,7 +131,7 @@ include("include.php");
         @media(max-width: 360px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
-                /* padding-top: -30%; */
+               
                 margin-top: -20px;
                 left: 14%;
             }
@@ -93,7 +140,7 @@ include("include.php");
         @media(max-width: 411px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
-                /* padding-top: -30%; */
+               
                 margin-top: -20px;
                 left: 19%;
             }
@@ -101,7 +148,7 @@ include("include.php");
         @media(max-width: 1366px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
-                /* padding-top: -30%; */
+               
                 margin-top: -210px;
                 left: 40%;
             }
@@ -110,12 +157,12 @@ include("include.php");
         @media(max-width: 1500px) {
             #bp_banner .hero-text h1 {
                 bottom: 5%;
-                /* padding-top: -30%; */
+                
                 margin-top: -10px;
                 margin-left: 5%;
                 left: 40%;
-            }
-        
+            } */
+         
 
     </style>
 
@@ -200,7 +247,7 @@ include("include.php");
         <div class="overlay"></div>
 
         <div class="hero-text">
-            <h1 style="color: #fff; text-align: center; z-index: 1; font-size: 50px;">Schedule</h1>
+            <h1>Schedule</h1>
         </div>
     </section>
     <!--End Banner-->

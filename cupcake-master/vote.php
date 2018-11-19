@@ -230,7 +230,7 @@ header("location:topcont.php");
         <div class="overlay"></div>
 
         <div class="hero-text">
-            <h1 style="color: #fff; text-align: center; z-index: 1; font-size: 50px;">Schedule</h1>
+            <h1 style="color: #fff; text-align: center; z-index: 1; font-size: 50px;">Vote</h1>
         </div>
     </section>
     <div class="container">
